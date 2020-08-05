@@ -2,6 +2,8 @@
 ;;for some reason, we currently have to manually enforce the
 ;;import and require order, or else neanderthal can't find the
 ;;native deps.  E.g., putting this in a namespace doesn't work.
+
+;;This works from the REPL.
 (import   'org.bytedeco.mkl.global.mkl_rt)
 (require '[uncomplicate.neanderthal
            [native :refer [dv dge fv fge native-float]]
