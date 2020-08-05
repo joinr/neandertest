@@ -5,6 +5,9 @@
 
 ;;This works from the REPL.
 (import   'org.bytedeco.mkl.global.mkl_rt)
+(import '[org.bytedeco.javacpp Loader])
+(Loader/load org.bytedeco.mkl.global.mkl_rt)
+
 (require '[uncomplicate.neanderthal
            [native :refer [dv dge fv fge native-float]]
            [core :refer [submatrix native dot mm ge]]
