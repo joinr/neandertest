@@ -1,21 +1,12 @@
-(ns neandertest.core)
-;;for some reason, we currently have to manually enforce the
-;;import and require order, or else neanderthal can't find the
-;;native deps.  E.g., putting this in a namespace doesn't work.
+(ns neandertest.core
+  (:require [neandertest.mkl]
+            [uncomplicate.neanderthal
+             [native :refer [dv dge fv fge native-float]]
+             [core :refer [submatrix native dot mm ge]]
+             [math :refer [sqrt log sin pi sqr]]
+             [random :refer [rand-normal! rand-uniform! rng-state]]]))
 
-;;This works from the REPL.
-(import   'org.bytedeco.mkl.global.mkl_rt)
-(import '[org.bytedeco.javacpp Loader])
-(Loader/load org.bytedeco.mkl.global.mkl_rt)
-
-(require '[uncomplicate.neanderthal
-           [native :refer [dv dge fv fge native-float]]
-           [core :refer [submatrix native dot mm ge]]
-           [math :refer [sqrt log sin pi sqr]]
-           [random :refer [rand-normal! rand-uniform! rng-state]]])
-
-
-(comment 
+(comment
 (def x (dv 1 2 3))
 ;; => #'testing-grounds.neanderthal.core/x
 (def y (dv 10 20 30))
