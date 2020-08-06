@@ -1,5 +1,5 @@
 (ns neandertest.core
-  (:require [neandertest.mkl]
+  (:require #_[neandertest.mkl] ;;no longer necessary!
             [uncomplicate.neanderthal
              [native :refer [dv dge fv fge native-float]]
              [core :refer [submatrix native dot mm ge]]

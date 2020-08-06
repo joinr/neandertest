@@ -1,6 +1,6 @@
 (ns neandertest.core-test
   (:require [clojure.test :refer :all]
-            [neandertest.mkl]
+            #_[neandertest.mkl] ;;no longer necessary!
             [uncomplicate.neanderthal
              [native :refer [dv dge fv fge native-float]]
              [core :refer [submatrix native dot mm ge]]
